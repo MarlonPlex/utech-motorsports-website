@@ -1,0 +1,156 @@
+@import url("colors.css");
+
+* {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.banner-text {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding-top: 2px;
+}
+
+.banner-text-bold {
+    font-size: 2rem;
+    font-weight: 1000;
+}
+
+.banner-text-slogan {
+    padding-top: 0.5rem;
+    color: var(--white);
+}
+
+
+.hero-banner-section {
+    background-color: grey;
+    background-image: linear-gradient(rgb(0, 0, 0), transparent), url("imgs/banner_004.png");
+    background-position: 0px 0px, 1550px -300px;
+    height: 300px;
+    width: 100%;
+}
+
+.hero-banner-section div {
+    padding: 50px 40px;
+}
+
+.mission-statement-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.mission-statement-section h1 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.mission-statement-section p {
+    line-height: 1.5;
+}
+
+.mission-statement-section-fullhd {
+    display: none;
+}
+
+.car-departments-section {
+    background-color: pink;
+}
+
+.team-members-section {
+    background-color: orange;
+}
+
+.sponsers-section {
+    background-color: purple;
+}
+
+.contact-section {
+    background-color: maroon;
+}
+
+
+@media only screen and (width >= 720px) {
+
+    .banner-text {
+        font-size: 3rem;
+    }
+
+    .banner-text-slogan {
+        font-size: 1.2rem;
+    }
+
+    .hero-banner-section div {
+        padding: 50px 60px;
+    }
+
+    .mission-statement-section {
+        padding: 40px 60px
+    }
+
+}
+
+@media only screen and (width >= 1080px) {
+    .banner-text{
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .banner-text-slogan {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-banner-section{
+        background-position: 0px 0px,  center;
+        height: 500px;
+    }
+
+    .hero-banner-section div {
+        padding: 100px 25px 100px 25px;
+    }
+    
+    .mission-statement-section {
+        display: none;
+    }
+
+    .mission-statement-section-fullhd {
+        display: flex;
+        flex-direction: row;
+        padding: 60px 15%;
+    }
+
+    .mission-statement-section-fullhd div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50px;
+        line-height: 2; 
+    }
+
+    .mission-statement-section-fullhd h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .mission-statement-section-fullhd p {
+        margin-top: 1rem;
+    } 
+
+    .mission-statement-section-fullhd img {
+        background-color: grey;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (width >= 1200px) {
+    .mission-statement-section-fullhd {
+        padding: 60px 20%;
+    }
+
+    .mission-statement-section-fullhd p {
+        line-height: 2;
+    }
+}
