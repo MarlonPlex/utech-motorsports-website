@@ -7,7 +7,7 @@
     - Eg. for a `<p>` tag in a `li` within a `ul` within the section container, the CSS selector is as follows: `#section-name ul li p`.
     - The reason for this design choice is simple, all related selectors are located next to each other in the CSS making it easier to comprehend.
     - However, this of course means that if you add any elements to these section containers in the HTML, there is a chance existing CSS selectors may target it. For example if you added another `<p>` element in the hierarchy from the previous example. Despite this we still went with this design because as the website is upgraded in the future, additions should replace existing layout and not add to it (outside of adding text content to elements, which is obviously not a concern) and you'd modify the CSS accordingly.
-- Breakpoints are placed at 720p, 1080p 1200p. 
+- Breakpoints are placed at 720p, 1080p and 1200p. 
 
 ### Adding Exec Images
 - Exec images should be in a square aspect ratio format.
@@ -22,7 +22,7 @@
 
 - [ ] Standardize the naming convention within `colors.css`.
 
-- [ ] Linktree, LinkedIn, IG, YT, TikTok links to be added.
+- [ ] ~~Linktree~~, LinkedIn, ~~IG~~, YT, TikTok links to be added.
 
 - [ ] Navigation bar to be added.
 
