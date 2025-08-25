@@ -1,5 +1,8 @@
 :root {
-    --primary: blue;
-    --secondary: yellow;
-    --white: white;
+    --white: #FFFFFF;
+    --grey: #8b8b8b;
+    --rich-black: #00171F;
+    --prussian-blue: #003459;
+    --cerulean: #007EA7;
+    --picton-blue: #00A8E8;
 }
