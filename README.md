@@ -20,22 +20,29 @@
 ### v1.0
 - [ ] Page favicon needed.
 
-- [ ] Standardize the naming convention within `colors.css`.
+- [x] Standardize the naming convention within `colors.css`.
 
 - [ ] ~~Linktree~~, LinkedIn, ~~IG~~, YT, TikTok links to be added.
 
-- [ ] Navigation bar to be added.
+- [ ] First iteration of navigation bar to be added. Features only links for now, in future will be dopdown menus when relevant pages added.
+    - [ ] ARIA and Keyboard-Navigable functionality.
 
 - [ ] Animations to be added to hero banner text, section h1's, and appropriate section elements (team members tiles, car department tiles, sponsor logos and other sections' text content). Additionally for the scrolling animation when footer links are clicked.
 
 - [ ] Credits page with attribution of CC0 icons used as well as any other attribution required to be made. When this is done link to this page in footer using the credits text link (which is currently commented out in index.html).
 
 ### v2.0
-- [ ] Sponsors page needed. Showing all sponsors and how interested parties can become sponsors and why.
+- [ ] Sponsors pages. 
+    - [ ] Showing all sponsors and how interested parties can become sponsors and why.
+    - [ ] Update navbar; add "sponsors" item with drop-down style UI where dorp-down items link to relevant pages.
 
-- [ ] Car department tiles to be linked to dedicated webpage for each department, detailing relevant information. Be sure to bring back .click-instructions class when this is done. Currently its display is set to none in index.css.
+- [ ] Dedicated Car department pages 
+    - [ ] Department Tiles to be linked to dedicated pages for each department, which detail relevant information. Be sure to bring back .click-instructions class when this is done. Currently its display is set to none in index.css.
+    - [ ] Update navbar "Departments" item from link to drop-down UI, where dop-down items link to each of these pages.
 
-- [ ] View All button in team members section should be brought back when dedicated page with all team members is created. This element is also set to `display: none` in index.css currently.   
+- [ ] Dedicated team page.
+    - [ ] View All button in team members section should be brought back when dedicated page with all team members is created. This element is also set to `display: none` in index.css currently.
+    - [ ] Update navbar with "team" item. Use drop-down UI with relevant links.    
 
 ### v3.0
 

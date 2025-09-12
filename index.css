@@ -84,11 +84,11 @@ body {
 }
 
 #car-departments-section ul li:hover {
-    outline: 3px solid var(--picton-blue);
+    outline: 3px solid var(--tertiary-light);
 }
 
 #contact-section {
-    background-color: var(--prussian-blue);
+    background-color: var(--primary-dark);
     color: var(--white);
     padding: 40px;
     display: flex;
@@ -108,7 +108,12 @@ body {
 }
 
 #contact-section button:hover{
-    background-color: var(--picton-blue);
+    background-color: var(--tertiary-light);
+}
+
+#contact-section div {
+    display: flex;
+    justify-content: center;
 }
 
 #contact-section div a {
@@ -168,6 +173,104 @@ body {
     display: none;
 }
 
+nav {
+    align-items: center;
+    background-color: var(--rich-black);
+    color: var(--white);
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    padding: 10px 40px;
+}
+
+nav .menu-icons {
+    background-color: var(--transparent-bg);
+    border-radius: 5px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+    padding: 5px;
+}
+
+nav .menu-icons:hover {
+    outline: 1px solid var(--white);
+}
+
+#nav-menu-mobile {
+    background-color: var(--rich-black);
+    height: 100vh;
+    max-width: 640px;
+    position: absolute;
+    padding: 20px 40px;
+    top: 0px;
+    right: -100vw;
+    width: 100vw;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+    visibility: hidden;
+}
+
+#nav-menu-mobile.active {
+    transform: translateX(-100vw);
+    visibility: visible;
+}
+
+#nav-menu-mobile div {
+    align-items: center;
+    display: flex;
+    gap: 25px;
+}
+
+#nav-menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0px;
+}
+
+#nav-menu-mobile ul li {
+    align-items: center;
+    background-color: var(--transparent-bg);
+    border-radius: 5px;
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    padding: 10px 15px;
+}
+
+#nav-menu-mobile ul li a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+#nav-menu-mobile ul li .menu-tiles-icons {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+    height: 30px;
+    object-fit: cover;
+    text-indent: -99999px;
+    width: 30px;
+}
+
+#nav-menu-mobile ul li .depts-icon {
+    background-image: url("imgs/icons/tools.svg");
+}
+
+#nav-menu-mobile ul li .team-icon {
+    background-image: url("imgs/icons/account-group.svg");
+}
+
+#nav-menu-mobile ul li .connect-icon {
+    background-image: url("imgs/icons/web.svg");
+}
+
+
+
+#nav-umc-logo {
+    margin: 10px 0px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+}
+
 footer {
     align-items: center;
     background-color: var(--rich-black);
@@ -221,7 +324,7 @@ footer #copyright-text {
 
 #team-members-section button {
     display: none;
-    background-color: var(--prussian-blue);
+    background-color: var(--primary-dark);
     border-radius: 5px;
     border: none;
     color: var(--white);
@@ -249,7 +352,7 @@ footer #copyright-text {
 
 #team-members-section ul li {
     clip-path: polygon(87% 0, 100% 14%, 100% 100%, 9% 100%, 0 88%, 0 0);
-    background-color: var(--prussian-blue);
+    background-color: var(--primary-dark);
     min-height: 350px;
     max-height: 350px;
     min-width: 250px;
@@ -276,13 +379,13 @@ footer #copyright-text {
 
 #team-members-section ul li p {
     bottom: 15px;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     font-size: 1.5rem;
     max-width: min-content;
     position: absolute;
     right: 20px;
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 5px black; /*can't use clolor var here for some reason*/
     z-index: 2;
 }
 
