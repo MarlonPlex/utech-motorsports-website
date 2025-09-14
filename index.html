@@ -7,53 +7,74 @@
     <title>UTech Motorsports</title>
 </head>
 <body>
-    <nav>
-        <a id="nav-umc-logo" href="./index.html"><img src="./imgs/umc-logos/umc-temp-logo.svg" alt="image of utech motorsports logo" width="80px"></a>
-        <img onclick="handleMenuToggleClick();" class="menu-icons" src="imgs/icons/menu.svg" alt="open navigation menu icon" width="40px">
-        <div id="nav-menu-mobile">
-            <div>
-                <img onclick="handleMenuToggleClick();" class="menu-icons" src="imgs/icons/menu-close.svg" alt="close navigation menu icon" width="40px">
+    <nav class="nav">
+        <a class="nav__logo" href="./index.html">
+            <img src="./imgs/umc-logos/umc-temp-logo.svg" alt="image of utech motorsports logo" width="80px">
+        </a>
+        <!-- This button is hidden at 720px. See index.css -->
+        <button id="nav-menu-open" class="nav__menu-button" aria-controls="mobile-nav-menu" onclick="handleMenuToggleClick();" aria-haspopup="menu">
+            <img class="nav__menu-icons" src="imgs/icons/menu.svg" alt="open navigation menu icon" width="30px">
+        </button>
+        <!-- Mobile navigaiton Menu -->
+        <div id="mobile-nav-menu" class="nav__mobile-menu" role="menu">
+            <div class="nav__mobile-header">
+                <button aria-label="close menu" id="nav-menu-close" class="nav__menu-button" onclick="handleMenuToggleClick();">
+                    <img class="nav__menu-icons" src="imgs/icons/menu-close.svg" alt="close navigation menu icon" width="30px">
+                </button>
                 <p>MENU</p>
             </div>
-            <ul>
-                <li>
-                    <div class="menu-tiles-icons depts-icon">decorative icon</div>
-                    <a href="">DEPARTMENTS</a>
+            <ul class="nav__mobile-items-list">
+                <li class="nav__menu-item" role="menuitem">
+                    <a class="nav__menu-item-link" href="#car-departments-section">
+                        <div class="nav__item-icon nav__item-icon--depts-icon">decorative icon</div>
+                        <p>DEPARTMENTS</p>
+                    </a>
                 </li>
-                <li>
-                    <div class="menu-tiles-icons  team-icon">decorative icon</div>
-                    <a href="">TEAM</a>
+                <li class="nav__menu-item" role="menuitem">
+                    <a class="nav__menu-item-link" href="#team-members-section">
+                        <div class="nav__item-icon  nav__item-icon--team-icon">decorative icon</div>
+                        <p>TEAM</p>
+                    </a>
                 </li>
-                <li>
-                    <div class="menu-tiles-icons  connect-icon">decorative icon</div>
-                    <a href="">CONNECT</a>
+                <li class="nav__menu-item" role="menuitem">
+                    <a class="nav__menu-item-link" href="#contact-section">
+                        <div class="nav__item-icon  nav__item-icon--connect-icon">decorative icon</div>
+                        <p>CONNECT</p>
+                    </a>
                 </li>
             </ul>
         </div>
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav__desktop-menu">
+            <li><a class="nav__desktop-menu-item" href="#car-departments-section">DEPARTMENTS</a></li>
+            <li><a class="nav__desktop-menu-item" href="#team-members-section">TEAM</a></li>
+            <li><a class="nav__desktop-menu-item" href="#contact-section">CONNECT</a></li>
+        </ul>
+
     </nav>    
-    <section id="hero-banner-section">
-        <div>
-            <h1 class="banner-text">UTech</h1>
-            <h1 id="mobile-title" class="banner-text banner-text-bold">MOTOR SPORTS</h1>
-            <h1 id="hd-title" class="banner-text banner-text-bold">MOTORSPORTS</h1>
-            <p class="banner-text-slogan">Jamaica's First Formula Student Team.</p>
+    <section id="hero-banner-section" class="hero-banner">
+        <div class="hero-banner__txt-wrapper">
+            <h1 class="hero-banner__banner-text">UTech</h1>
+            <h1 class="hero-banner__banner-text hero-banner__mobile-text hero-banner__banner-text--bold">MOTOR SPORTS</h1>
+            <h1 class="hero-banner__title-HD hero-banner__banner-text hero-banner__banner-text--bold ">MOTORSPORTS</h1>
+            <p class="hero-banner__slogan">Jamaica's First Formula Student Team.</p>
         </div>
     </section>
     
-    <section id="mission-statement-section">
-        <h1>MISSION STATEMENT</h1>
-        <p>
+    <section id="mission-statement-section" class="mission-statement">
+        <h1 class="mission-statement__heading">MISSION STATEMENT</h1>
+        <p class="mission-statement__paragraph">
             <b>UTech Motorsports'</b> mission is to cultivate a dynamic and collaborative learning
             environment for aspiring professionals and create future leaders by bridging
             the gap between theoretical knowledge and real-world applications.
         </p>
-        <img src="imgs/group_photo.JPG" alt="group photo of Utech racing members">
+        <img class="mission-statement__photo" src="imgs/group_photo.JPG" alt="group photo of Utech racing members">
     </section>
-    <section id="mission-statement-section-fullhd">
-        <img src="imgs/group_photo.JPG" alt="group photo of Utech racing members">
-        <div>        
-            <h1>MISSION STATEMENT</h1>
-            <p>
+    <section id="mission-statement-section-fullhd" class="mission-fullHD-wrapper">
+        <img class="mission-fullHD-wrapper__photo" src="imgs/group_photo.JPG" alt="group photo of Utech racing members">
+        <div class="mission-fullHD-wrapper__text-wrapper">        
+            <h1 class="mission-fullHD-wrapper__heading">MISSION STATEMENT</h1>
+            <p class="mission-fullHD-wrapper__paragraph">
                <b>UTech Motorsports'</b> mission is to cultivate a dynamic and collaborative learning
                 environment for aspiring professionals and create future leaders by bridging
                 the gap between theoretical knowledge and real-world applications.
@@ -61,173 +82,173 @@
         </div>
     </section>
     
-    <section id="car-departments-section">
-        <h1>CAR DEVELOPMENT</h1>
-        <p class="click-instructions">Click tiles to see more.</p>    
-        <ul>
-            <li>
-                <img src="imgs/icons/chasis.png" width="75px" height="75px" alt="vector image of car chasis">
-                <p class="dept-title">Chassis</p>
-                <p class="dept-description">
+    <section id="car-departments-section" class="depts-sect">
+        <h1 class="depts-sect__heading">CAR DEVELOPMENT</h1>
+        <p class="depts-sect__click-instructions">Click tiles to see more.</p>    
+        <ul class="depts-sect__list">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/chasis.png" width="75px" height="75px" alt="vector image of car chasis">
+                <p class="depts-sect__dept-title">Chassis</p>
+                <p class="depts-sect__dept-description">
                     A fully tested chassis prototype with a final report summarizing design, testing, and future recommendations.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/f1_cart_body.png" width="75px" height="75px" alt="vector image of formula car body">
-                <p class="dept-title">Body</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/f1_cart_body.png" width="75px" height="75px" alt="vector image of formula car body">
+                <p class="depts-sect__dept-title">Body</p>
+                <p class="depts-sect__dept-description">
                     Complete bodywork and cockpit design with CAD models, material selection, ergonomic layout, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/aero.png" width="75px" height="75px" alt="vector image of airfoil">
-                <p class="dept-title">Aero</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/aero.png" width="75px" height="75px" alt="vector image of airfoil">
+                <p class="depts-sect__dept-title">Aero</p>
+                <p class="depts-sect__dept-description">
                     Full aero package design with CAD models, CFD optimization, material selection, structural analysis, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/braking.png" width="75px" height="75px" alt="vector image of brake hub and disc">
-                <p class="dept-title">Braking</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/braking.png" width="75px" height="75px" alt="vector image of brake hub and disc">
+                <p class="depts-sect__dept-title">Braking</p>
+                <p class="depts-sect__dept-description">
                     Complete braking system design with CAD models, component selection, FEA validation, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/powertrain.png" width="75px" height="75px" alt="vector image of car's powertrain">
-                <p class="dept-title">Powertrain</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/powertrain.png" width="75px" height="75px" alt="vector image of car's powertrain">
+                <p class="depts-sect__dept-title">Powertrain</p>
+                <p class="depts-sect__dept-description">
                     Complete powertrain design with CAD models, control systems, simulations, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/cooling.png" width="75px" height="75px" alt="vector image of cooling fan">
-                <p class="dept-title">Cooling</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/cooling.png" width="75px" height="75px" alt="vector image of cooling fan">
+                <p class="depts-sect__dept-title">Cooling</p>
+                <p class="depts-sect__dept-description">
                     Complete electrical cooling system design with CAD models, material selection, thermal simulations, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/suspension.png" width="75px" height="75px" alt="vector image of shock absorbers">
-                <p class="dept-title">Suspension</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/suspension.png" width="75px" height="75px" alt="vector image of shock absorbers">
+                <p class="depts-sect__dept-title">Suspension</p>
+                <p class="depts-sect__dept-description">
                     Comprehensive design package with CAD models, FEA analyses, and compliance documentation for suspension and steering systems.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/electronics.png" width="75px" height="75px" alt="vector image of integrated circuit">
-                <p class="dept-title">Electronics</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/electronics.png" width="75px" height="75px" alt="vector image of integrated circuit">
+                <p class="depts-sect__dept-title">Electronics</p>
+                <p class="depts-sect__dept-description">
                     Complete electrical system design with schematics, wiring, ECUs, instrumentation, and compliance documentation.
                 </p>
             </li>
-            <li>
-                <img src="imgs/icons/battery.png" width="75px" height="75px" alt="vector image of chemical battery">
-                <p class="dept-title">Battery</p>
-                <p class="dept-description">
+            <li class="depts-sect__tile">
+                <img class="depts-sect__icon" src="imgs/icons/battery.png" width="75px" height="75px" alt="vector image of chemical battery">
+                <p class="depts-sect__dept-title">Battery</p>
+                <p class="depts-sect__dept-description">
                     Complete battery system design with cell selection, pack/module layout, HV protection, and CAD meeting FSAE accumulator and safety requirements.                    
                 </p>
             </li>
         </ul>
     </section>
     
-    <section id="team-members-section">
-        <h1>MEET THE TEAM</h1>
-        <ul>
-            <li>
-                <h2>Team Captain</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Jevon Davis</p>
+    <section id="team-members-section" class="team-section">
+        <h1 class="team-section__heading">MEET THE TEAM</h1>
+        <ul class="team-section__tile-list">
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Team Captain</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Jevon Davis</p>
             </li>
-            <li>
-                <h2>Vice-Captain</h2>
-                <img src="imgs/team/noHeadShot_Female.png" alt="vector image of female portrait silhouette">
-                <p>Kiyomi McLean</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Vice-Captain</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Female.png" alt="vector image of female portrait silhouette">
+                <p class="team-section__exec-name">Kiyomi McLean</p>
             </li>
-            <li>
-                <h2>Secretary</h2>
-                <img src="imgs/team/noHeadShot_Female.png" alt="vector image of female portrait silhouette">
-                <p>Amelia Mosely</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Secretary</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Female.png" alt="vector image of female portrait silhouette">
+                <p class="team-section__exec-name">Amelia Mosely</p>
             </li>
-            <li>
-                <h2>Technical Director</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Jeremiah Dennis</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Technical Director</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Jeremiah Dennis</p>
             </li>
-            <li>
-                <h2>Treasurer</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Matt-Baruch Christie</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Treasurer</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Matt-Baruch Christie</p>
             </li>
-            <li>
-                <h2>Head of Marketing and PR</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Jue Soltau</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Head of Marketing and PR</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Jue Soltau</p>
             </li>
-            <li>
-                <h2>Head of Electrical</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Jerome Samuels</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Head of Electrical</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Jerome Samuels</p>
             </li>
-            <li>
-                <h2>Head of Mechanical</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
-                <p>Andrew Solomon</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Head of Mechanical</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="vector image of male portrait silhouette">
+                <p class="team-section__exec-name">Andrew Solomon</p>
             </li>
-            <li>
-                <h2>Head of IT</h2>
-                <img src="imgs/team/noHeadShot_Male.png" alt="">
-                <p>Marlon Cockett</p>
+            <li class="team-section__tile">
+                <h2 class="team-section__exec-title">Head of IT</h2>
+                <img class="team-section__headshot-img" src="imgs/team/noHeadShot_Male.png" alt="">
+                <p class="team-section__exec-name">Marlon Cockett</p>
             </li>
         </ul>
-        <button>View All</button>
+        <button class="team-section__button">View All</button>
     </section>
 
-    <section id="sponsers-section">
-        <h1>SPONSORS</h1>
-        <ul>
-            <img src="imgs/sponsors/Altair_Logo.png" alt="Sponsor Altair's logo" width="250px">
-            <img src="imgs/sponsors/ANSS Logo.png" alt="Sponsor Ansys' Logo" width="250px">
+    <section id="sponsors-section" class="sponsors-section">
+        <h1 class="sponsors-section__heading">SPONSORS</h1>
+        <ul class="sponsors-section__grid-container">
+            <img class="sponsors-section__logos" src="imgs/sponsors/Altair_Logo.png" alt="Sponsor Altair's logo" width="250px">
+            <img class="sponsors-section__logos" src="imgs/sponsors/ANSS Logo.png" alt="Sponsor Ansys' Logo" width="250px">
         </ul>
     </section>
 
-    <section id="contact-section">
-        <h1>CONNECT WITH US</h1>
-        <p>Interested in sponsoring UTech Motorsports or have an inquiry? We'd love to hear from you!</p>
-        <div>
-            <a href="mailto:utechracingclub@gmail.com" target="_blank" rel="noreferrer"><button>Email Us</button></a>
-            <button id="copy-email-button">Copy Email</button>
+    <section id="contact-section" class="contact-section">
+        <h1 class="contact-section__heading">CONNECT WITH US</h1>
+        <p class="contact-section__text">Interested in sponsoring UTech Motorsports or have an inquiry? We'd love to hear from you!</p>
+        <div class="contact-section__flex-wrappers">
+            <a class="contact-section__btn" href="mailto:utechracingclub@gmail.com" target="_blank" rel="noreferrer">Email Us</a>
+            <button id="copy-email-button" class="contact-section__btn">Copy Email</button>
         </div>
-        <p>You can also follow our socials for latest updates!</p>
-        <div>
+        <p class="contact-section__text">You can also follow our socials for latest updates!</p>
+        <div class="contact-section__flex-wrappers">
             <a href="https://linktr.ee/UTechMotorsport" target="_blank" rel="noreferrer">
-                <img src="imgs/socials/linktree.svg" alt="Link Tree Logo" width="35px">
+                <img class="contact-section__socials-icon" src="imgs/socials/linktree.svg" alt="Link Tree Logo" width="35px">
             </a>
             <a href="https://www.instagram.com/utechmotorsport/" target="_blank" rel="noreferrer">
-                <img src="imgs/socials/instagram.svg" alt="Instagram logo" width="40px">
+                <img class="contact-section__socials-icon" src="imgs/socials/instagram.svg" alt="Instagram logo" width="40px">
             </a>
         </div>
     </section>
 
-    <footer>
-        <div id="footer-sections-container">
-            <section class="footer-section">
-                <p class="footer-headings">ABOUT US</p>
-                <a href="#car-departments-section"><p>Departments</p></a>
-                <a href="#team-members-section"><p>Team</p></a>
-                <a href="#contact-section"><p>Contact Us</p></a>
+    <footer class="footer-section">
+        <div class="footer-section__lists-wrapper">
+            <section class="footer-section__list">
+                <p class="footer-section__headings">ABOUT US</p>
+                <a class="footer-section__links" href="#car-departments-section">Departments</a>
+                <a class="footer-section__links" href="#team-members-section">Team</a>
+                <a class="footer-section__links" href="#contact-section">Contact Us</a>
             </section>
-            <section class="footer-section">
-                <p class="footer-headings">SOCIALS</p>
-                <a href="https://www.instagram.com/utechmotorsport/" target="_blank" rel="noreferrer"><p>IG</p></a>
-                <a href="https://linktr.ee/UTechMotorsport" target="_blank" rel="noreferrer"><p>LinkTree</p></a>
+            <section class="footer-section__list">
+                <p class="footer-section__headings">SOCIALS</p>
+                <a class="footer-section__links" href="https://www.instagram.com/utechmotorsport/" target="_blank" rel="noreferrer">Instagram</a>
+                <a class="footer-section__links" href="https://linktr.ee/UTechMotorsport" target="_blank" rel="noreferrer">LinkTree</a>
             </section>
-            <section class="footer-section">
-                <p class="footer-headings">ADDITIONAL INFO</p>
-                <!-- <a href=""><p>Credits</p></a> -->
+            <section class="footer-section__list">
+                <p class="footer-section__headings">ADDITIONAL INFO</p>
+                <!-- <a  class="footer-section__links" href=""><p>Credits</p></a> -->
             </section>
         </div>
-        <p id="copyright-text">© 2025 UTech Motorsports (UMC). All rights reserved.</p>
+        <p class="footer-section__copyright-text">© 2025 UTech Motorsports (UMC). All rights reserved.</p>
     </footer>
     <script src="index.js"></script>
 </body>

@@ -22,10 +22,11 @@
 
 - [x] Standardize the naming convention within `colors.css`.
 
-- [ ] ~~Linktree~~, LinkedIn, ~~IG~~, YT, TikTok links to be added.
+- [ ] ~~Linktree~~, LinkedIn, ~~IG~~, TikTok links to be added.
 
-- [ ] First iteration of navigation bar to be added. Features only links for now, in future will be dopdown menus when relevant pages added.
-    - [ ] ARIA and Keyboard-Navigable functionality.
+- [x] First iteration of navigation bar to be added. Features only links for now, in future will be dopdown menus when relevant pages added.
+
+- [x] Minimum ARIA and Keyboard-Navigable functionality. (Tab navigation focuses on some unknown element in teams section, leaving this for now as it doesn't hinder overall keyboard navigation.)
 
 - [ ] Animations to be added to hero banner text, section h1's, and appropriate section elements (team members tiles, car department tiles, sponsor logos and other sections' text content). Additionally for the scrolling animation when footer links are clicked.
 

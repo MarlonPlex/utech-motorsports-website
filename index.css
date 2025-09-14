@@ -1,93 +1,62 @@
+/*
+****************************************************************************
+****READ THE FOLLOWING BEFORE MAKING ANY MODIFICATIONS OR CONTRIBUTING.****
+****************************************************************************
+* STYLESHEET LAYOUT:  
+* Stylesheet divided into CSS Variable imports, CSS Resets/Defaults, Components & 
+* layout and finally media queries in that order. 
+* Media queries are at (720, 1080, 1200)px, i.e. the breakpoints of the web app.
+* 
+* SELECTORS NAMING CONVENTION: 
+* The button to open the mobile navigation menu with ID "#nav-menu-open" is hidden 
+* via "display: none" property at 720px media query. The button's ID is used as the selector. 
+* 
+* Apart from that button (and RESETS/DEFAULTS Selectors), all other selectors use the BEM 
+* naming syntax. If you are unfamiliar with this syntax or want to see the justification
+* in using it, this article explains it nicely: https://css-tricks.com/bem-101/
+* 
+* ADDING PAGE SECTIONS: 
+* Major page sections (eg. departments section, contact section, etc.) "padding" property values at 
+* various screen widths: 
+* "40px" on mobile (i.e. less than 720px, which is the first breakpoint/media query), 
+* "40px 60px" at media query greater than 720px 
+* "60px 15%" at media query greater than 1080px 
+* Use these padding values at the various screen widths if you add any major page sections to 
+* ensure consistency.
+* 
+* ADDITIONAL NOTES: 
+* Do not embbed any fonts into the CSS. Official UTech Motorsports fonts should be provided in
+* the future.
+* 
+* Only use color variables in "colors.css" when styling content. This is the approved club palette.
+*/
+
+/*CSS VARIABLES IMPORTS*/
 @import url("colors.css");
-/*General element selectors*/
+
+/*CSS RESETS/DEFAULTS*/
 * {
     margin: 0rem;
     padding: 0rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     box-sizing: border-box;
-
 }
 
 body {
     overflow-x: hidden ;
 }
 
-/*Class selectors*/
-
-.banner-text {
-    color: var(--white);
-    font-size: 3rem;
-    font-weight: 400;
-    padding-top: 2px;
+:root {
+    scroll-behavior: smooth;
 }
 
-.banner-text-bold {
-    font-size: 3.5rem;
-    font-weight: 1000;
+:target {
+    scroll-margin-top: 90px;
 }
 
-.banner-text-slogan {
-    font-size: 1.5rem;
-    padding-top: 0.5rem;
-    color: var(--white);
-}
-
-
-#car-departments-section {
-    padding: 40px;
-}
-
-#car-departments-section .click-instructions {
-    display: none;
-    text-align: center;
-    padding-bottom: 10px;
-    color: grey;
-    font-size: 0.8rem;
-}
-
-#car-departments-section .dept-title {
-    font-weight: bold;
-    padding: 10px 0px;
-    color: var(--white);
-}
-
-#car-departments-section .dept-description {
-    display: none;
-}
-
-#car-departments-section h1 {
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
-    text-align: center;
-}
-
-#car-departments-section ul {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    grid-auto-rows: 150px;
-    list-style-type: none;
-}
-
-#car-departments-section ul li {
-    align-items: center;
-    background-color: var(--rich-black);
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#car-departments-section ul li img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
-}
-
-#car-departments-section ul li:hover {
-    outline: 3px solid var(--tertiary-light);
-}
-
-#contact-section {
+/*COMPONENTS & LAYOUTS*/
+.contact-section {
     background-color: var(--primary-dark);
     color: var(--white);
     padding: 40px;
@@ -97,38 +66,130 @@ body {
     gap: 1rem;
 }
 
-#contact-section button {
+.contact-section__btn {
     background-color: transparent;
     border: 1px solid var(--white);
     border-radius: 50px;
     color: var(--white);
     font-weight: bold;
     margin: 15px 0px;
+    text-decoration: none;
     padding: 10px 30px;
 }
 
-#contact-section button:hover{
+.contact-section__btn:hover{
     background-color: var(--tertiary-light);
 }
 
-#contact-section div {
+.contact-section__flex-wrappers {
     display: flex;
     justify-content: center;
+    gap: 15px;
 }
 
-#contact-section div a {
-    margin: 0px 10px;
-}
-
-#contact-section div a img {
+.contact-section__socials-icon {
     filter: brightness(0) saturate(100%) invert(100%) sepia(19%) 
 }
 
-#contact-section p {
+.contact-section__text {
     text-align: center;
 }
 
-#hero-banner-section {
+.depts-sect {
+    padding: 40px;
+}
+
+.depts-sect__click-instructions {
+    display: none;
+    text-align: center;
+    padding-bottom: 10px;
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.depts-sect__dept-title {
+    font-weight: bold;
+    padding: 10px 0px;
+    color: var(--white);
+}
+
+.depts-sect__dept-description {
+    display: none;
+}
+
+.depts-sect__heading {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.depts-sect__list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-auto-rows: 150px;
+    list-style-type: none;
+}
+
+.depts-sect__tile {
+    align-items: center;
+    background-color: var(--rich-black);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.depts-sect__icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+}
+
+.depts-sect__tile:hover {
+    outline: 3px solid var(--tertiary-light);
+}
+
+.footer-section {
+    align-items: center;
+    background-color: var(--rich-black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px 15px;
+}
+
+.footer-section__copyright-text {
+    color: var(--grey);
+    font-size: 0.8rem;
+}
+
+.footer-section__headings {
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.footer-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+.footer-section__links {
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+    font-size: 0.8rem;
+}
+
+.footer-section__lists-wrapper {
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.hero-banner {
     background-color: grey;
     background-image: linear-gradient(rgb(0, 0, 0) 10%, transparent), url("imgs/banner_004.png");
     background-position: 0px 0px, 1550px -280px;
@@ -136,7 +197,7 @@ body {
     width: 100%;
 }
 
-#hero-banner-section div {
+.hero-banner__txt-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,36 +205,54 @@ body {
     padding: 0px 40px;
 }
 
-#hero-banner-section #hd-title {
+.hero-banner__title-HD {
     display: none;
 }
 
-#mission-statement-section {
+.hero-banner__banner-text {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 400;
+    padding-top: 2px;
+}
+
+.hero-banner__banner-text--bold {
+    font-size: 3.5rem;
+    font-weight: 1000;
+}
+
+.hero-banner__slogan {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    color: var(--white);
+}
+
+.mission-statement {
     padding: 40px 0px;
     text-align: center;
 }
 
-#mission-statement-section h1 {
+.mission-statement__heading {
     font-size: 1.2rem;
     padding-bottom: 1rem;
 }
 
-#mission-statement-section img {
+.mission-statement__photo {
     height: 250px;
     object-fit: cover;
     width: 100%;
 }
 
-#mission-statement-section p {
+.mission-statement__paragraph {
     line-height: 1.5;
     padding: 0px 40px 2rem;
 }
 
-#mission-statement-section-fullhd {
+.mission-fullHD-wrapper {
     display: none;
 }
 
-nav {
+.nav {
     align-items: center;
     background-color: var(--rich-black);
     color: var(--white);
@@ -186,18 +265,41 @@ nav {
     padding: 10px 40px;
 }
 
-nav .menu-icons {
-    background-color: var(--transparent-bg);
-    border-radius: 5px;
-    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
-    padding: 5px;
+.nav__desktop-menu {
+    display: none;
+    list-style-type: none;
+    gap: 5vw;
 }
 
-nav .menu-icons:hover {
+.nav__desktop-menu-item {
+    color: var(--white);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.nav__desktop-menu-item:hover {
+    text-decoration: underline;
+}
+
+.nav__menu-button {
+    background-color: var(--transparent-bg);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+}
+
+.nav__menu-button:hover {
     outline: 1px solid var(--white);
 }
 
-#nav-menu-mobile {
+.nav__menu-icons {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+}
+
+.nav__mobile-menu {
     background-color: var(--rich-black);
     height: 100vh;
     max-width: 640px;
@@ -211,40 +313,40 @@ nav .menu-icons:hover {
     visibility: hidden;
 }
 
-#nav-menu-mobile.active {
+.nav__mobile-menu--active {
     transform: translateX(-100vw);
     visibility: visible;
 }
 
-#nav-menu-mobile div {
+.nav__mobile-header {
     align-items: center;
     display: flex;
     gap: 25px;
 }
 
-#nav-menu-mobile ul {
+.nav__mobile-items-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 20px 0px;
 }
 
-#nav-menu-mobile ul li {
-    align-items: center;
+.nav__menu-item {
     background-color: var(--transparent-bg);
     border-radius: 5px;
-    display: flex;
-    gap: 25px;
     list-style-type: none;
     padding: 10px 15px;
 }
 
-#nav-menu-mobile ul li a {
-    text-decoration: none;
+.nav__menu-item-link {
+    align-items: center;
     color: var(--white);
+    display: flex;
+    gap: 25px;
+    text-decoration: none;
 }
 
-#nav-menu-mobile ul li .menu-tiles-icons {
+.nav__item-icon {
     filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
     height: 30px;
     object-fit: cover;
@@ -252,77 +354,32 @@ nav .menu-icons:hover {
     width: 30px;
 }
 
-#nav-menu-mobile ul li .depts-icon {
+.nav__item-icon--depts-icon {
     background-image: url("imgs/icons/tools.svg");
 }
 
-#nav-menu-mobile ul li .team-icon {
+.nav__item-icon--team-icon {
     background-image: url("imgs/icons/account-group.svg");
 }
 
-#nav-menu-mobile ul li .connect-icon {
+.nav__item-icon--connect-icon {
     background-image: url("imgs/icons/web.svg");
 }
 
-
-
-#nav-umc-logo {
+.nav__logo {
     margin: 10px 0px;
     filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
 }
 
-footer {
-    align-items: center;
-    background-color: var(--rich-black);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    padding: 50px 40px 15px;
-}
-
-footer #copyright-text {
-    color: var(--grey);
-    font-size: 0.8rem;
-}
-
-.footer-headings {
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding-bottom: 10px;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-bottom: 30px;
-}
-
-.footer-section a {
-    text-decoration: none;
-    color: rgb(150, 150, 150);
-}
-
-.footer-section a p {
-    font-size: 0.8rem;
-}
-
-#footer-sections-container {
-    border-bottom: 1px solid var(--grey) ;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-#team-members-section {
+.team-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 0px;
 }
 
-#team-members-section button {
+/*Temporaryly disabled until team members pages are implemented*/
+.team-section__button {
     display: none;
     background-color: var(--primary-dark);
     border-radius: 5px;
@@ -333,13 +390,13 @@ footer #copyright-text {
     padding: 10px 50px;
 }
 
-#team-members-section h1 {
+.team-section__heading {
     text-align: center;
     padding-bottom: 2rem;
     font-size: 1.2rem ;
 }
 
-#team-members-section ul {
+.team-section__tile-list {
     clip-path: polygon(5% 0%, 95% 0%, 95% 100%, 5% 100%);
     list-style-type: none;
     display: flex;
@@ -350,7 +407,7 @@ footer #copyright-text {
     padding: 0px 8%;
 }
 
-#team-members-section ul li {
+.team-section__tile {
     clip-path: polygon(87% 0, 100% 14%, 100% 100%, 9% 100%, 0 88%, 0 0);
     background-color: var(--primary-dark);
     min-height: 350px;
@@ -360,14 +417,14 @@ footer #copyright-text {
     position: relative;
 }
 
-#team-members-section ul li img {
+.team-section__headshot-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 1;
 } 
 
-#team-members-section ul li h2 {
+.team-section__exec-title {
     color: var(--white);
     max-width: min-content;
     font-size: 1.8rem;
@@ -377,7 +434,7 @@ footer #copyright-text {
     z-index: 2;
 }
 
-#team-members-section ul li p {
+.team-section__exec-name {
     bottom: 15px;
     color: var(--white);
     font-weight: bold;
@@ -385,160 +442,173 @@ footer #copyright-text {
     max-width: min-content;
     position: absolute;
     right: 20px;
-    text-shadow: 0px 0px 5px black; /*can't use clolor var here for some reason*/
+    text-shadow: 0px 0px 5px black; /*can't use variable syntax, "var()", here for some reason*/
     z-index: 2;
 }
 
-#sponsers-section {
+.sponsors-section {
     padding: 40px;
 }
 
-#sponsers-section ul {
+.sponsors-section__grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-#sponsers-section ul img {
+.sponsors-section__logos {
     justify-self: center;
     align-self: center;
 }
-#sponsers-section h1 {
+
+.sponsors-section__heading {
     text-align: center;
     font-size: 1.2rem;
 }
 
 
-
-
+/*MEDIA QUERIES*/
 @media only screen and (width >= 720px) {
-    .banner-text {
-        font-size: 3rem;
-    }
-
-    .banner-text-bold {
-        font-size: 3.5rem;
-    }
-
-    .banner-text-slogan {
-        font-size: 1.5rem;
-    }
-
-    #car-departments-section {
+    .depts-sect {
         padding: 40px 60px;
     }
     
-    #car-departments-section ul {
+    .depts-sect__list {
         grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
         grid-auto-rows: 200px;
     }
 
-    #contact-section {
+    .contact-section {
         padding: 40px 60px;
     }
 
-    #contact-section h1 {
+    .contact-section__heading {
         font-size: 1.2rem;
     }
+
     
-    footer {
+    .footer-section {
         padding: 50px 60px 15px;
     }
-
-    .footer-section {
+    
+    .footer-section__list {
         gap: 30px;
         padding-bottom: 45px;
     }
-
-    #hero-banner-section {
+    
+    .hero-banner__banner-text {
+        font-size: 3rem;
+    }
+    
+    .hero-banner__banner-text--bold {
+        font-size: 3.5rem;
+    }
+    
+    .hero-banner__slogan {
+        font-size: 1.5rem;
+    }
+    
+    .hero-banner {
         height: 480px;
         background-position: 0px 0px, 1550px -180px;
     }
     
-    #hero-banner-section div {
+    .hero-banner__txt-wrapper {
         padding: 0px 60px;
     }
-
-    #hero-banner-section #hd-title {
+    
+    .hero-banner__title-HD {
         display: inline;
     }
+    
+    .hero-banner__mobile-text {
+        display: none;
+    }
+    
+    .mission-statement {
+        padding: 40px 0px;
+    }
+    
+    .mission-statement__photo {
+        height: 500px;
+    }
+    
+    .nav {
+        padding: 10px 60px;        
+    }
 
-    #hero-banner-section #mobile-title {
+    .nav__desktop-menu {
+        display: flex;
+    }
+    
+    #nav-menu-open {
         display: none;
     }
 
-    #mission-statement-section {
-        padding: 40px 0px;
-    }
-
-    #mission-statement-section img {
-        height: 500px;
-    }
-
-    #sponsers-section {
+    .sponsors-section {
         padding: 40px 60px;
     }
 
-    #sponsers-section h1 {
+    .sponsors-section___heading {
         font-size: 2rem;
     }
 }
 
 @media only screen and (width >= 1080px) {
-    .banner-text{
-        font-size: 4rem;
-        text-align: center;
-    }
-
-    .banner-text-slogan {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    #car-departments-section {
+    .contact-section {
         padding: 60px 15%;
     }
 
-    #car-departments-section h1 {
+    .contact-section__heading {
+        font-size: 1.5rem;
+    }
+
+    .depts-sect {
+        padding: 60px 15%;
+    }
+
+    .depts-sect__heading {
         font-size: 2rem;
     }
 
-    #car-departments-section ul {
+    .depts-sect__list {
         grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
         grid-auto-rows: 300px;
     }
 
-    #contact-section {
-        padding: 60px 15%;
-    }
-
-    #contact-section h1 {
-        font-size: 1.5rem;
-    }
-
-    footer {
+    .footer-section {
         padding: 50px 15% 15px;
     }
 
-    #hero-banner-section {
+    .hero-banner {
         background-position: 0px 0px,  center;
         height: 720px;
     }
 
-    #hero-banner-section div {
+    .hero-banner__txt-wrapper {
         padding: 0px 25px;
     }
-   
-    #mission-statement-section {
+
+    .hero-banner__banner-text{
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .hero-banner__slogan {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .mission-statement {
         display: none;
     }
 
-    #mission-statement-section-fullhd {
+    .mission-fullHD-wrapper {
         display: flex;
         flex-direction: row;
     }
 
-    #mission-statement-section-fullhd div {
+    .mission-fullHD-wrapper__text-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -546,17 +616,17 @@ footer #copyright-text {
         line-height: 2; 
     }
 
-    #mission-statement-section-fullhd h1 {
+    .mission-fullHD-wrapper__heading {
         font-size: 2rem;
         line-height: 1.4;
     }
 
-    #mission-statement-section-fullhd p {
+    .mission-fullHD-wrapper__paragraph {
         margin-top: 1rem;
         margin-right: 10vw;
     } 
 
-    #mission-statement-section-fullhd img {
+    .mission-fullHD-wrapper__photo {
         width: 50vw;
         height: 500px;
         clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
@@ -564,34 +634,38 @@ footer #copyright-text {
         object-fit: cover;
     }    
 
-    #team-members-section h1 {
+    .nav {
+        padding: 10px 15%;
+    }
+
+    .team-section__heading {
         font-size: 2rem;
     }
 
-    #sponsers-section {
+    .sponsors-section {
         padding: 60px 15%;
     }
-
 }
 
 @media only screen and (width >= 1200px) {
-    #car-departments-section .dept-description {
+    .depts-sect__dept-description {
         display: inline;
         margin: 15px 20px;
         color: var(--white);
         text-align: center;
     }
 
-    #car-departments-section ul li {
+    .depts-sect__tile {
         padding: 10px;
     }
 
-    #hero-banner-section {
+    .hero-banner {
         height: 100vh;
         background-image: linear-gradient(rgb(0, 0, 0) 30%, transparent), url("imgs/banner_004.png");
         background-position: 0px 0px, -100px 180px;
     }
-    #mission-statement-section-fullhd p {
+    
+    .mission-fullHD-wrapper__photo{
         line-height: 2;
     }
 }
