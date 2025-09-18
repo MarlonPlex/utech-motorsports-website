@@ -1,5 +1,5 @@
 # UTech Motosports' Website Roadmap and Documentation
-## Current State  - v0.2:
+## Current State  - v0.2: https://utech-motorsports.pages.dev/
 ### HTML AND CSS Structure
 - The HTML structue and the resulting CSS structure is as follows:
     - The index page is divided into sections with thier appropriate `id` attribute. 
