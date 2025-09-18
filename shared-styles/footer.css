@@ -1,0 +1,64 @@
+/*CSS SHARED STYLES IMPORTS*/
+/*No need to import color.css here, 
+as any page this is added to should import that already.*/
+
+
+/*LAYOUT AND COMPONENTS*/
+.footer-section {
+    align-items: center;
+    background-color: var(--rich-black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px 15px;
+}
+
+.footer-section__copyright-text {
+    color: var(--grey);
+    font-size: 0.8rem;
+}
+
+.footer-section__headings {
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.footer-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+.footer-section__links {
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+    font-size: 0.8rem;
+}
+
+.footer-section__lists-wrapper {
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (width >= 720) {
+    .footer-section {
+        padding: 50px 60px 15px;
+    }
+    
+    .footer-section__list {
+        gap: 30px;
+        padding-bottom: 45px;
+    }
+}
+
+@media only screen and (width >= 720) {
+    .footer-section {
+        padding: 50px 15% 15px;
+    }
+}

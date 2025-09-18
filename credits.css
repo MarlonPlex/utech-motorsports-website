@@ -1,0 +1,63 @@
+/*CSS VARIABLES IMPORTS*/
+@import url("shared-styles/colors.css");
+@import url("shared-styles/footer.css");
+
+/*CSS RESETS/DEFAULTS*/
+* {
+    margin: 0rem;
+    padding: 0rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden ;
+    background-color: rgb(179, 179, 179);
+    height: 100%;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+:target {
+    scroll-margin-top: 90px;
+}
+
+
+/*LAYOUT AND COMPONENTS*/
+.content-wrapper {
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    min-height: 80vh;
+    padding: 40px;
+}
+.cc0-list-wrapper {
+    padding: 10px 0px;
+}
+
+.nav-bar {
+    align-items: center;
+    background-color: var(--rich-black);
+    display: flex;
+    gap: 30px;
+    padding: 10px 40px;
+}
+
+.nav-bar__logo{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
+    margin: 10px 0px;
+}
+
+.nav-bar__link {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.page-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0rem 0rem 1rem;
+}

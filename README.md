@@ -28,14 +28,17 @@
 
 - [x] Minimum ARIA and Keyboard-Navigable functionality. (Tab navigation focuses on some unknown element in teams section, leaving this for now as it doesn't hinder overall keyboard navigation.)
 
-- [ ] Animations to be added to hero banner text, section h1's, and appropriate section elements (team members tiles, car department tiles, sponsor logos and other sections' text content). Additionally for the scrolling animation when footer links are clicked.
+- [x] Animations to be added to hero banner text. Additionally for the scrolling animation when footer links are clicked. (View timeline animations were to be added to section h1's, appropriate section elements (car department tiles, sponsor logos etc.), but the animation-timeline property is not baseline accross popular browsers yet and avoiding a js implmentation of this for simplicity).
 
-- [ ] Credits page with attribution of CC0 icons used as well as any other attribution required to be made. When this is done link to this page in footer using the credits text link (which is currently commented out in index.html).
+- [x] Credits page with attribution of CC0 icons used as well as any other attribution required to be made. When this is done link to this page in footer using the credits text link (which is currently commented out in index.html).
 
 ### v2.0
+- [ ] Re-factor Navigiation bar into a web component.
+
 - [ ] Sponsors pages. 
     - [ ] Showing all sponsors and how interested parties can become sponsors and why.
     - [ ] Update navbar; add "sponsors" item with drop-down style UI where dorp-down items link to relevant pages.
+    - [ ] Sponsor logos link to their website/or socials.
 
 - [ ] Dedicated Car department pages 
     - [ ] Department Tiles to be linked to dedicated pages for each department, which detail relevant information. Be sure to bring back .click-instructions class when this is done. Currently its display is set to none in index.css.
@@ -45,9 +48,13 @@
     - [ ] View All button in team members section should be brought back when dedicated page with all team members is created. This element is also set to `display: none` in index.css currently.
     - [ ] Update navbar with "team" item. Use drop-down UI with relevant links.    
 
-### v3.0
+- [ ] Join Team Section on home page
+    - [ ] Short line on become a member of UMC and why. 
+    - [ ] Button that links google form to become member
+    - [ ] Button that links to page with open exec positions
+        - [ ] Each position has links to form for that position 
 
+### v3.0 (Specs ongoing, will be split into more versions)
 - [ ] History Section. Future/past vehicles, Awards, Galleries, Competitions, Events as articles/dedicated pages.
 
-- [ ] Section to become a member of UMC and why. 
 

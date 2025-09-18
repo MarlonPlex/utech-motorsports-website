@@ -3,7 +3,7 @@
 ****READ THE FOLLOWING BEFORE MAKING ANY MODIFICATIONS OR CONTRIBUTING.****
 ****************************************************************************
 * STYLESHEET LAYOUT:  
-* Stylesheet divided into CSS Variable imports, CSS Resets/Defaults, Components & 
+* Stylesheet divided into CSS Variable imports, CSS Resets/Defaults, Animation keyframes, Components & 
 * layout and finally media queries in that order. 
 * Media queries are at (720, 1080, 1200)px, i.e. the breakpoints of the web app.
 * 
@@ -31,8 +31,9 @@
 * Only use color variables in "colors.css" when styling content. This is the approved club palette.
 */
 
-/*CSS VARIABLES IMPORTS*/
-@import url("colors.css");
+/*CSS SHARED STYLES IMPORTS*/
+@import url("shared-styles/colors.css");
+@import url("shared-styles/footer.css");
 
 /*CSS RESETS/DEFAULTS*/
 * {
@@ -55,9 +56,21 @@ body {
     scroll-margin-top: 90px;
 }
 
+/*ANIMATIONS KEYFRAMES*/
+@keyframes top-fade-in {
+    0% {
+        transform: translateY(-30px);
+        color: transparent;
+    }
+    100% {
+        color: white;
+    }
+}
+
 /*COMPONENTS & LAYOUTS*/
 .contact-section {
     background-color: var(--primary-dark);
+    border-top: solid 10px var(--accent-gold);
     color: var(--white);
     padding: 40px;
     display: flex;
@@ -96,6 +109,8 @@ body {
 }
 
 .depts-sect {
+    background: linear-gradient(90deg, rgba(7, 79, 130, 1) 0%, var(--primary-dark) 12%, var(--primary-dark) 93%, rgba(7, 79, 130, 1) 100%);
+    background-color: var(--primary-dark);
     padding: 40px;
 }
 
@@ -118,8 +133,9 @@ body {
 }
 
 .depts-sect__heading {
+    color: white;
     font-size: 1.2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 
@@ -148,46 +164,6 @@ body {
     outline: 3px solid var(--tertiary-light);
 }
 
-.footer-section {
-    align-items: center;
-    background-color: var(--rich-black);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    padding: 50px 40px 15px;
-}
-
-.footer-section__copyright-text {
-    color: var(--grey);
-    font-size: 0.8rem;
-}
-
-.footer-section__headings {
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding-bottom: 10px;
-}
-
-.footer-section__list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-bottom: 30px;
-}
-
-.footer-section__links {
-    text-decoration: none;
-    color: rgb(150, 150, 150);
-    font-size: 0.8rem;
-}
-
-.footer-section__lists-wrapper {
-    border-bottom: 1px solid var(--grey);
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
-    width: 100%;
-}
 
 .hero-banner {
     background-color: grey;
@@ -214,6 +190,7 @@ body {
     font-size: 3rem;
     font-weight: 400;
     padding-top: 2px;
+    animation: 1.5s ease 0ms 1 normal backwards running top-fade-in;
 }
 
 .hero-banner__banner-text--bold {
@@ -225,9 +202,12 @@ body {
     font-size: 1.5rem;
     padding-top: 0.5rem;
     color: var(--white);
+    animation: 2s ease 100ms 1 normal backwards running top-fade-in;
 }
 
 .mission-statement {
+    border-top: solid 10px var(--accent-gold);
+    border-bottom: solid 10px var(--accent-gold);
     padding: 40px 0px;
     text-align: center;
 }
@@ -371,17 +351,37 @@ body {
     filter: brightness(0) saturate(100%) invert(100%) sepia(19%);
 }
 
+.sponsors-section {
+    padding: 40px;
+}
+
+.sponsors-section__grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.sponsors-section__logos {
+    justify-self: center;
+    align-self: center;
+}
+
+.sponsors-section__heading {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 .team-section {
+    align-items: center;
+    border-top: solid 10px var(--accent-gold);
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 40px 0px;
 }
 
 /*Temporaryly disabled until team members pages are implemented*/
 .team-section__button {
     display: none;
-    background-color: var(--primary-dark);
     border-radius: 5px;
     border: none;
     color: var(--white);
@@ -446,26 +446,6 @@ body {
     z-index: 2;
 }
 
-.sponsors-section {
-    padding: 40px;
-}
-
-.sponsors-section__grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.sponsors-section__logos {
-    justify-self: center;
-    align-self: center;
-}
-
-.sponsors-section__heading {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
 
 /*MEDIA QUERIES*/
 @media only screen and (width >= 720px) {
@@ -484,16 +464,6 @@ body {
 
     .contact-section__heading {
         font-size: 1.2rem;
-    }
-
-    
-    .footer-section {
-        padding: 50px 60px 15px;
-    }
-    
-    .footer-section__list {
-        gap: 30px;
-        padding-bottom: 45px;
     }
     
     .hero-banner__banner-text {
@@ -576,10 +546,6 @@ body {
         grid-auto-rows: 300px;
     }
 
-    .footer-section {
-        padding: 50px 15% 15px;
-    }
-
     .hero-banner {
         background-position: 0px 0px,  center;
         height: 720px;
@@ -604,6 +570,8 @@ body {
     }
 
     .mission-fullHD-wrapper {
+        border-top: solid 5px var(--accent-gold);        
+        border-bottom: solid 5px var(--accent-gold);        
         display: flex;
         flex-direction: row;
     }
@@ -645,6 +613,11 @@ body {
     .sponsors-section {
         padding: 60px 15%;
     }
+
+    .sponsors-section__heading {
+        font-size: 2rem;
+    }
+
 }
 
 @media only screen and (width >= 1200px) {
