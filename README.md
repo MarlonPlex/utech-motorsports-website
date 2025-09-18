@@ -1,12 +1,8 @@
 # UTech Motosports' Website Roadmap and Documentation
 ## Current State  - v0.2: https://utech-motorsports.pages.dev/
 ### HTML AND CSS Structure
-- The HTML structue and the resulting CSS structure is as follows:
-    - The index page is divided into sections with thier appropriate `id` attribute. 
-    - The resulting CSS is designed around this, specficailly, the selectors for every item start at these section IDs and uses the child elements tags to select the parent sections' children. 
-    - Eg. for a `<p>` tag in a `li` within a `ul` within the section container, the CSS selector is as follows: `#section-name ul li p`.
-    - The reason for this design choice is simple, all related selectors are located next to each other in the CSS making it easier to comprehend.
-    - However, this of course means that if you add any elements to these section containers in the HTML, there is a chance existing CSS selectors may target it. For example if you added another `<p>` element in the hierarchy from the previous example. Despite this we still went with this design because as the website is upgraded in the future, additions should replace existing layout and not add to it (outside of adding text content to elements, which is obviously not a concern) and you'd modify the CSS accordingly.
+- The HTML structue and the resulting CSS follows the Body-Elemen-Modifier (BEM) Syntax. 
+- If you are unfamiliar with this syntax or want to see the justification in using it, this article explains it nicely: https://css-tricks.com/bem-101/
 - Breakpoints are placed at 720p, 1080p and 1200p. 
 
 ### Adding Exec Images
