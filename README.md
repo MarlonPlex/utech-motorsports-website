@@ -1,5 +1,5 @@
 # UTech Motosports' Website Roadmap and Documentation
-## Current State  - v0.2: https://utech-motorsports.pages.dev/
+## Current State  - v0.8: https://utech-motorsports.pages.dev/
 ### HTML AND CSS Structure
 - The HTML structue and the resulting CSS follows the Body-Elemen-Modifier (BEM) Syntax. 
 - If you are unfamiliar with this syntax or want to see the justification in using it, this article explains it nicely: https://css-tricks.com/bem-101/
